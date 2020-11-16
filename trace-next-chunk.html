@@ -1,0 +1,1256 @@
+<div><b>Legend: </b>Fastchunk = Purple | Smallchunk = Blue | Largechunk = Orange</div><style>body {
+font-size: 12px;
+background-color: #EBEBEB;
+font-family: "Lucida Console", Monaco, monospace;
+width: 385em;
+}
+p {
+margin: 0.8em 0 0 0.1em;
+}
+.block {
+float: left;
+padding: 0.5em 0;
+text-align: center;
+color: black;
+}
+.normal {
+
+-webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.80);
+-moz-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.80);
+box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.80);
+
+}
+.empty + .empty {
+border-left: 1px solid gray;
+margin-left: -1px;
+}
+.empty {
+color: gray;
+}
+.line {  }.line:after {
+  content:"";
+  display:table;
+  clear:both;
+}.state {
+margin: 0.5em; padding: 0;
+
+background-color: white;
+
+border-radius: 0.3em;
+
+-webkit-box-shadow: inset 2px 2px 4px 0px rgba(0,0,0,0.80);
+-moz-box-shadow: inset 2px 2px 4px 0px rgba(0,0,0,0.80);
+box-shadow: inset 2px 2px 4px 0px rgba(0,0,0,0.80);
+
+padding: 0.5em;
+
+}.log {
+}.error {
+color: white;
+background-color: #8b1820;
+}.error .empty {
+color: white;
+}</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script>
+var scrollTimeout = null;
+$(window).scroll(function(){
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function(){
+    $('.log').stop();
+    $('.log').animate({
+        'margin-left': $(this).scrollLeft()
+    }, 100);
+    }, 200);
+});
+</script>
+<body>
+<div class="timeline">
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+</div>
+<div class="log"><p>realloc(0x0, 0x220) = 0x11fd010</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+</div>
+<div class="log"><p>malloc(0x10) = 0x11fd240</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+</div>
+<div class="log"><p>malloc(0x20) = 0x11fd260</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+</div>
+<div class="log"><p>malloc(0x11c00) = 0x11fd290</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+</div>
+<div class="log"><p>malloc(0x1000) = 0x120eea0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+</div>
+<div class="log"><p>malloc(0x228) = 0x120feb0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+</div>
+<div class="log"><p>malloc(0x1000) = 0x12100e0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+</div>
+<div class="log"><p>malloc(0x19) = 0x12110f0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x1211120</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x12112b0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+</div>
+<div class="log"><p>calloc(0x4c0, 0x1) = 0x1211440</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+</div>
+<div class="log"><p>malloc(0x2000) = 0x1211910</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x1bf0) = 0x1213920</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+</div>
+<div class="log"><p>calloc(0x1d0, 0x1) = 0x1215520</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x1215700</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x1215890</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x28)</div>
+</div>
+<div class="log"><p>malloc(0x28) = 0x1215a20</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+</div>
+<div class="log"><p>free(0x1215a20) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x28)</div>
+</div>
+<div class="log"><p>malloc(0x28) = 0x1215a20</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x28)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+</div>
+<div class="log"><p>malloc(0xc9) = 0x1215a50</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x28)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+</div>
+<div class="log"><p>malloc(0x8a) = 0x1215b30</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x28)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x8000) = 0x1215bd0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1215a20) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211900</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x26) = 0x1215a20</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1211900</strong><br />+ 0x2010</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215a40</strong><br />+ 0xe0 (0xc9)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1211910) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1211900</strong><br />+ 0x2010</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a40</strong><br />+ 0xe0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215b20</strong><br />+ 0xa0 (0x8a)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1215a50) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1211900</strong><br />+ 0x2010</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1215a40</strong><br />+ 0x180</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1215bc0</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1215b30) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1211900</strong><br />+ 0x2010</div>
+<div class="block normal" style="width: 80em; background-color: rgb(223, 144, 48);;"><strong>0x1213910</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>free(0x1215bd0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 100em; ;"><strong>0x1211900</strong><br />+ 0x3c10</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215510</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>free(0x1213920) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 40em; background-color: rgb(223, 144, 48);;"><strong>0x1211430</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 110em; ;"><strong>0x1211900</strong><br />+ 0x3df0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>free(0x1215520) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 150em; ;"><strong>0x1211430</strong><br />+ 0x42c0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>free(0x1211440) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 140em; ;"><strong>0x12115c0</strong><br />+ 0x4130</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x1211440</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 130em; ;"><strong>0x1211750</strong><br />+ 0x3fa0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>malloc(0x180) = 0x12115d0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block empty" style="width: 120em; ;"><strong>0x1211780</strong><br />+ 0x3f70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>malloc(0x20) = 0x1211760</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block empty" style="width: 100em; ;"><strong>0x1211c50</strong><br />+ 0x3aa0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>calloc(0x4c0, 0x1) = 0x1211790</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block empty" style="width: 80em; ;"><strong>0x1213c60</strong><br />+ 0x1a90</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+</div>
+<div class="log"><p>malloc(0x2000) = 0x1211c60</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block empty" style="width: 80em; ;"><strong>0x1213c60</strong><br />+ 0x1a90</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x1bf0) = 0x1215a50</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 70em; ;"><strong>0x1213e40</strong><br />+ 0x18b0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1215a10</strong><br />+ 0x30 (0x26)</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>calloc(0x1d0, 0x1) = 0x1213c70</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 70em; ;"><strong>0x1213e40</strong><br />+ 0x18b0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>free(0x1215a20) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e40</strong><br />+ 0x50 (0x48)</div>
+<div class="block empty" style="width: 60em; ;"><strong>0x1213e90</strong><br />+ 0x1860</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x48) = 0x1213e50</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 70em; ;"><strong>0x1213e40</strong><br />+ 0x18b0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>free(0x1213e50) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x14)</div>
+<div class="block empty" style="width: 50em; ;"><strong>0x1213eb0</strong><br />+ 0x1840</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x14) = 0x1213ea0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 70em; ;"><strong>0x1213e40</strong><br />+ 0x18b0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>free(0x1213ea0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x18)</div>
+<div class="block empty" style="width: 50em; ;"><strong>0x1213eb0</strong><br />+ 0x1840</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x18) = 0x1213ea0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x18)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block empty" style="width: 40em; ;"><strong>0x1213f50</strong><br />+ 0x17a0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x89) = 0x1213ec0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x18)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+</div>
+<div class="log"><p>malloc(0x4a) = 0x1213f60</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x18)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x8000) = 0x1217650</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1213e40</strong><br />+ 0x70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1213ea0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1213e40</strong><br />+ 0x70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213fb0</strong><br />+ 0x70 (0x68)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1214020</strong><br />+ 0x16d0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x68) = 0x1213fc0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1213e40</strong><br />+ 0x70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1213fc0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1213e40</strong><br />+ 0x70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213fb0</strong><br />+ 0x70 (0x68)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1214020</strong><br />+ 0x16d0</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x68) = 0x1213fc0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 20em; ;"><strong>0x1213e40</strong><br />+ 0x70</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>free(0x1213fc0) = 0x0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x3)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+</div>
+<div class="log"><p>malloc(0x3) = 0x1213ea0</p></div>
+</div>
+<div class="state ">
+<div class="line" style="">
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x11fd000</strong><br />+ 0x230 (0x220)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd230</strong><br />+ 0x20 (0x10)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x11fd250</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x11fd280</strong><br />+ 0x11c10 (0x11c00)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x120ee90</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x120fea0</strong><br />+ 0x230 (0x228)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(223, 144, 48);;"><strong>0x12100d0</strong><br />+ 0x1010 (0x1000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x12110e0</strong><br />+ 0x30 (0x19)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211110</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12112a0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1211430</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12115c0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1211750</strong><br />+ 0x30 (0x20)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211780</strong><br />+ 0x4d0 (0x4c0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1211c50</strong><br />+ 0x2010 (0x2000)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213c60</strong><br />+ 0x1e0 (0x1d0)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1213e40</strong><br />+ 0x50</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213e90</strong><br />+ 0x20 (0x3)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1213eb0</strong><br />+ 0xa0 (0x89)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x1213f50</strong><br />+ 0x60 (0x4a)</div>
+<div class="block empty" style="width: 30em; ;"><strong>0x1213fb0</strong><br />+ 0x1740</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x12156f0</strong><br />+ 0x190 (0x180)</div>
+<div class="block normal" style="width: 10em; background-color: rgb(115, 115, 255);;"><strong>0x1215880</strong><br />+ 0x190 (0x180)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x1215a10</strong><br />+ 0x30</div>
+<div class="block normal" style="width: 30em; background-color: rgb(223, 144, 48);;"><strong>0x1215a40</strong><br />+ 0x1c00 (0x1bf0)</div>
+<div class="block normal" style="width: 20em; background-color: rgb(223, 144, 48);;"><strong>0x1217640</strong><br />+ 0x8010 (0x8000)</div>
+<div class="block empty" style="width: 10em; ;"><strong>0x121f650</strong><br />+ 0x7f0bdede1260</div>
+<div class="block normal" style="width: 10em; background-color: rgb(170, 96, 176);;"><strong>0x7f0be00008b0</strong><br />+ 0x40 (0x38)</div>
+</div>
+<div class="log"><p>malloc(0x38) = 0x7f0be00008c0</p></div>
+</div>
+</div>
+</body>
